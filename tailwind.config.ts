@@ -1,0 +1,23 @@
+module.exports = {
+  content: [
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './lib/**/*.{js,ts,jsx,tsx,mdx}'
+  ],
+  theme: {
+    extend: {
+      colors: {
+        brand: {
+          orange: '#e45312',
+          blue: '#73a9c2',
+          charcoal: '#111111',
+          paper: '#f8f8f8'
+        }
+      },
+      boxShadow: {
+        soft: '0 20px 60px rgba(17,17,17,0.12)'
+      }
+    }
+  },
+  plugins: []
+};

@@ -1,0 +1,9 @@
+# .gitignore
+.next
+node_modules
+out
+coverage
+npm-debug.log*
+.env.local
+.env
+.DS_Store
