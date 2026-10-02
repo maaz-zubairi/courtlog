@@ -1,5 +1,5 @@
-import { getTeamById } from '@/lib/data';
 import Link from 'next/link';
+import { getTeamById } from '@/lib/data';
 
 export default function TeamDetailPage({ params }: { params: { id: string } }) {
   const team = getTeamById(params.id);

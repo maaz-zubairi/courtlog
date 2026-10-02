@@ -8,7 +8,12 @@ export function average(value: number, total: number) {
   return Number(((value / total) * 1).toFixed(2));
 }
 
-export function getPlayerStatsForGame(player: any) {
+export function getPlayerStatsForGame(player: {
+  points?: number;
+  rebounds?: number;
+  assists?: number;
+  games?: number;
+}) {
   return {
     ppg: Number(((player.points ?? 0) / Math.max(player.games || 1, 1)).toFixed(2)),
     rpg: Number(((player.rebounds ?? 0) / Math.max(player.games || 1, 1)).toFixed(2)),

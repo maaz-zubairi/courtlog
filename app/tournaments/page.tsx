@@ -1,5 +1,5 @@
-import { tournaments } from '@/lib/data';
 import Link from 'next/link';
+import { tournaments } from '@/lib/data';
 
 export default function TournamentsPage() {
   return (

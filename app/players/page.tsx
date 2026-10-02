@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getPlayerById, getTeamById, players } from '@/lib/data';
+import { players } from '@/lib/data';
 
 export default function PlayersPage() {
   return (

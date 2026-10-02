@@ -86,4 +86,5 @@ export type StatRow = {
   fgPct: number;
   tpPct: number;
   ftPct: number;
+  points?: number;
 };

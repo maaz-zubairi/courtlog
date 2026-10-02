@@ -455,7 +455,8 @@ export const leaderboard: StatRow[] = [
     pfpg: 2.7,
     fgPct: 44.5,
     tpPct: 38.7,
-    ftPct: 79.2
+    ftPct: 79.2,
+    points: 326
   },
   {
     id: 'player-2',
@@ -471,7 +472,8 @@ export const leaderboard: StatRow[] = [
     pfpg: 3.3,
     fgPct: 46.2,
     tpPct: 34.5,
-    ftPct: 72.8
+    ftPct: 72.8,
+    points: 278
   },
   {
     id: 'player-5',
@@ -487,7 +489,8 @@ export const leaderboard: StatRow[] = [
     pfpg: 3.5,
     fgPct: 51.4,
     tpPct: 35.2,
-    ftPct: 69.9
+    ftPct: 69.9,
+    points: 221
   }
 ];
 

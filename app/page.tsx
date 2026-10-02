@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import { tournaments, teams, leaderboard, players } from '@/lib/data';
+import { tournaments, players, leaderboard } from '@/lib/data';
 
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-brand-charcoal text-white">
-      <section className="border-b border-white/10 bg-gradient-to-br from-brand-charcoal to-slate-900">
+      <section className="border-b border-white/10 bg-gradient-to-br from-brand-charcoal via-slate-900 to-slate-950">
         <div className="mx-auto max-w-7xl px-6 py-16">
           <div className="flex flex-col gap-10">
             <div className="flex items-center justify-between gap-4">
@@ -35,16 +35,16 @@ export default function HomePage() {
 
               <div className="rounded-2xl border border-white/10 bg-white/5 p-5 shadow-soft backdrop-blur-sm">
                 <div className="text-sm uppercase tracking-[0.2em] text-slate-400">Featured league</div>
-                <div className="mt-4 text-3xl font-bold text-white">{tournaments[0].name}</div>
-                <div className="mt-2 text-brand-blue">Season {tournaments[0].season}</div>
+                <div className="mt-4 text-3xl font-bold text-white">{tournaments[0]?.name}</div>
+                <div className="mt-2 text-brand-blue">Season {tournaments[0]?.season}</div>
                 <div className="mt-6 grid grid-cols-2 gap-3 text-sm text-slate-300">
                   <div className="rounded-xl bg-slate-900/60 p-3">
                     <div className="text-slate-400">Teams</div>
-                    <div className="mt-2 text-xl font-bold text-white">{tournaments[0].teams.length}</div>
+                    <div className="mt-2 text-xl font-bold text-white">{tournaments[0]?.teams.length ?? 0}</div>
                   </div>
                   <div className="rounded-xl bg-slate-900/60 p-3">
                     <div className="text-slate-400">Games</div>
-                    <div className="mt-2 text-xl font-bold text-white">{tournaments[0].games.length}</div>
+                    <div className="mt-2 text-xl font-bold text-white">{tournaments[0]?.games.length ?? 0}</div>
                   </div>
                 </div>
               </div>
@@ -88,7 +88,7 @@ export default function HomePage() {
                 <Link key={player.id} href={`/players/${player.id}`} className="flex items-center justify-between rounded-xl border border-white/10 bg-slate-800 p-4 transition hover:border-brand-orange/60">
                   <div>
                     <div className="font-semibold text-white">{player.canonicalName}</div>
-                    <div className="text-sm text-slate-400">{player.position ?? 'Guard'} • {player.teamIds.length ? 'Active roster' : 'Free agent'}</div>
+                    <div className="text-sm text-slate-400">{player.position ?? 'Guard'} • Active roster</div>
                   </div>
                   <div className="text-right">
                     <div className="text-xl font-bold text-brand-orange">{player.career.points}</div>

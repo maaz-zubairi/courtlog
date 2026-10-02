@@ -14,10 +14,10 @@ export const supabase =
       })
     : null;
 
-export const getSupabaseClient = () => {
+export function getSupabaseClient() {
   if (!supabase) {
     throw new Error('Supabase environment variables are not configured.');
   }
 
   return supabase;
-};
+}

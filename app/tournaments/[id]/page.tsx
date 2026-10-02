@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getTournamentById, getTeamById, players, leaderboard } from '@/lib/data';
+import { getTournamentById, getTeamById, leaderboard } from '@/lib/data';
 
 export default function TournamentDetailPage({ params }: { params: { id: string } }) {
   const tournament = getTournamentById(params.id);
@@ -8,7 +8,9 @@ export default function TournamentDetailPage({ params }: { params: { id: string 
     return <main className="mx-auto max-w-7xl px-6 py-16 text-white">Tournament not found.</main>;
   }
 
-  const participatingTeams = tournament.teams.map((teamId) => getTeamById(teamId)).filter(Boolean);
+  const participatingTeams = tournament.teams
+    .map((teamId) => getTeamById(teamId))
+    .filter((team): team is NonNullable<typeof team> => Boolean(team));
 
   return (
     <main className="mx-auto max-w-7xl px-6 py-16">
@@ -23,9 +25,9 @@ export default function TournamentDetailPage({ params }: { params: { id: string 
           <h2 className="mb-5 text-2xl font-bold text-white">Participating teams</h2>
           <div className="space-y-3">
             {participatingTeams.map((team) => (
-              <Link key={team?.id} href={`/teams/${team?.id}`} className="flex items-center justify-between rounded-xl border border-white/10 bg-slate-800 p-3 text-slate-200 hover:border-brand-orange/60">
-                <span>{team?.name}</span>
-                <span className="text-brand-blue">{team?.wins ?? 0}-{team?.losses ?? 0}</span>
+              <Link key={team.id} href={`/teams/${team.id}`} className="flex items-center justify-between rounded-xl border border-white/10 bg-slate-800 p-3 text-slate-200 hover:border-brand-orange/60">
+                <span>{team.name}</span>
+                <span className="text-brand-blue">{team.wins}-{team.losses}</span>
               </Link>
             ))}
           </div>
